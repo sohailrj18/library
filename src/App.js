@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; // We'll add the styles for light/dark mode and the grid/list view
+import './App.css'; // Styles for light/dark mode and grid/list view
 
 const App = () => {
-  // Initializing the state for books, view, search term, and light/dark mode
+  // State management for books, view, search term, and light/dark mode
   const [books, setBooks] = useState([]);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [selectedBook, setSelectedBook] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
-  // Fetch books from the JSON file
-  useEffect(() => {
-    // Using fetch to load the JSON data
-    fetch('/books.json') // If the JSON is inside the public folder
-  
-      .then((response) => response.json())
-      .then((data) => setBooks(data))
-      .catch((error) => console.error('Error fetching books:', error));
-  }, []);
-  // // Sample mock data (in a real app, this could come from an API)
+
+  // Mock data for books (this will be used if fetching fails or for local mock data)
   // const mockBooks = [
   //   {
   //     id: 1,
@@ -42,48 +34,40 @@ const App = () => {
   //     genre: "Adventure",
   //     image: "https://example.com/moby-dick.jpg",
   //     description: "A sailor’s narrative of the obsessive quest of Ahab for revenge on the whale Moby Dick."
-  //   }, {
-  //     id: 4,
-  //     title: "To Kill a Mockingbird",
-  //     author: "Harper Lee",
-  //     genre: "Fiction",
-  //     image: "https://example.com/to-kill-a-mockingbird.jpg",
-  //     description: "A novel about the serious issues of rape and racial inequality."
-  //   }, {
-  //     id: 5,
-  //     title: "To Kill a Mockingbird",
-  //     author: "Harper Lee",
-  //     genre: "Fiction",
-  //     image: "https://example.com/to-kill-a-mockingbird.jpg",
-  //     description: "A novel about the serious issues of rape and racial inequality."
-  //   }, {
-  //     id: 6,
-  //     title: "To Kill a Mockingbird",
-  //     author: "Harper Lee",
-  //     genre: "Fiction",
-  //     image: "https://example.com/to-kill-a-mockingbird.jpg",
-  //     description: "A novel about the serious issues of rape and racial inequality."
   //   }
   // ];
 
-  // // Fetch the books from mock data or local JSON file
-  // useEffect(() => {
-  //   setBooks(mockBooks);
-  // }, []);
+  // Fetch books from the JSON file or use mock data
+  useEffect(() => {
+    // Try to fetch books from a local JSON file
+    fetch('/books.json')  // Adjust the file path to match your real JSON location
+      .then((response) => response.json())
+      .then((data) => setBooks(data))  // If successful, use real data
+      .catch((error) => {
+        console.error('Error fetching books:', error);
+        // Use mock data if fetch fails
+        // setBooks(mockBooks);
+      });
+  }, []);
+
+  // Function to filter books based on search term
+  const filterBooks = (books, term) => {
+    return books.filter(book =>
+      book.title.toLowerCase().includes(term.toLowerCase()) ||
+      book.author.toLowerCase().includes(term.toLowerCase()) ||
+      book.genre.toLowerCase().includes(term.toLowerCase())
+    );
+  };
 
   // Handle search filter
-  const filteredBooks = books.filter(book =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    book.genre.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredBooks = filterBooks(books, searchTerm);
 
-  // Switch between grid and list view
+  // Toggle between grid and list view
   const toggleView = () => {
     setViewMode(prevViewMode => (prevViewMode === 'grid' ? 'list' : 'grid'));
   };
 
-  // Handle light/dark mode toggle
+  // Toggle light/dark mode
   const toggleDarkMode = () => {
     setIsDarkMode(prevMode => !prevMode);
   };
@@ -94,11 +78,11 @@ const App = () => {
         <button onClick={toggleDarkMode}>
           {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         </button>
-        <input 
-          type="text" 
-          placeholder="Search by title, author, or genre..." 
+        <input
+          type="text"
+          placeholder="Search by title, author, or genre..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} 
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button onClick={toggleView}>
           Switch to {viewMode === 'grid' ? 'List' : 'Grid'} View
