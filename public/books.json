@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Fiction",
+    "image": "book1.png",
+    "description": "A novel about the serious issues of rape and racial inequality."
+  },
+  {
+    "id": 2,
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "image": "book2.jpg",
+    "description": "A dystopian social science fiction novel and cautionary tale."
+  },
+  {
+    "id": 3,
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "genre": "Adventure",
+    "image": "book3.jpg",
+    "description": "A sailor’s narrative of the obsessive quest of Ahab for revenge on the whale Moby Dick."
+  },
+  {
+    "id": 4,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "image": "book4.jpg",
+    "description": "A romantic novel that critiques the British landed gentry at the end of the 18th century."
+  },
+  {
+    "id": 5,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "image": "book5.jpg",
+    "description": "A novel about the American dream, set in the 1920s Jazz Age."
+  },
+  {
+    "id": 6,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Fiction",
+    "image": "book6.jpg",
+    "description": "A story about a young man's rebellion against societal expectations and his journey through New York."
+  },
+  {
+    "id": 7,
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Psychological fiction",
+    "image": "book7.jpg",
+    "description": "A novel about a young man grappling with morality, crime, and punishment in St. Petersburg, Russia."
+  },
+  {
+    "id": 8,
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "genre": "Historical Fiction",
+    "image": "book8.jpg",
+    "description": "An epic novel about the Napoleonic wars and Russian society in the early 19th century."
+  },
+  {
+    "id": 9,
+    "title": "The Odyssey",
+    "author": "Homer",
+    "genre": "Epic Poetry",
+    "image": "book9.jpg",
+    "description": "The epic tale of Odysseus' journey home after the Trojan War."
+  },
+  {
+    "id": 10,
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Philosophical novel",
+    "image": "book10.jpg",
+    "description": "A deep exploration of faith, doubt, free will, and the human soul."
+  },
+  {
+    "id": 11,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Dystopian Fiction",
+    "image": "book11.jpg",
+    "description": "A dystopian novel exploring a future where technology and social conditioning dominate."
+  },
+  {
+    "id": 12,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "image": "book12.jpg",
+    "description": "A young hobbit embarks on a quest to help a group of dwarves reclaim their homeland."
+  },
+  {
+    "id": 13,
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "genre": "Dystopian Fiction",
+    "image": "book13.jpg",
+    "description": "In a future where books are banned, a fireman who burns books begins to question society."
+  },
+  {
+    "id": 14,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Adventure, Fiction",
+    "image": "book14.jpg",
+    "description": "A shepherd embarks on a journey to find his personal legend and treasure."
+  },
+  {
+    "id": 15,
+    "title": "The Chronicles of Narnia",
+    "author": "C.S. Lewis",
+    "genre": "Fantasy",
+    "image": "book15.jpg",
+    "description": "A series of fantasy novels following the adventures of children who discover a magical land."
+  }
+]
